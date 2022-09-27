@@ -91,7 +91,7 @@ document.querySelector("#addToCart").addEventListener("click", (event) => {
             quantity: newQuantity,
         }
 
-        // Merge du tableau et de l'élément avce son id, sa couleur et sa quantité
+        // Merge du tableau et de l'élément avec son id, sa couleur et sa quantité
         cartArray.push(newCartItem); 
 
         // Actualise le localStorage pour la prise en compte des modifications
