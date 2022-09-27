@@ -1,9 +1,10 @@
 // Accès aux arguments de requête décodés par GET contenus dans l'URL
-// N° De commande (voir ligne 255/"cart.js")
+// Récupération du N° De commande (création ligne 258/"cart.js")
 const searchParams = (new URL(document.location)).searchParams;
 const orderId = searchParams.get("order-id")
 
-// Se déclenche une fois le document HTML initial entièrement chargé et analysé
+// L'événement DOMContentLoaded de déclenche une fois le document HTML initial entièrement chargé et analysé
+// AddEventListener() associe un gestionnaire d'événements à un élément
 window.addEventListener("DOMContentLoaded", (event) => {
 
     // Création et insertion de l'élément orderId

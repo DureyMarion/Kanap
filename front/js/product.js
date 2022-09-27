@@ -2,11 +2,12 @@
 const API_URL = "http://localhost:3000/api";
 
 // Accès aux arguments de requête décodés par GET contenus dans l'URL
-// Id des produits
+// Récupération des Id des produits
 const searchParams = (new URL(document.location)).searchParams;
 const currentId = searchParams.get("id")
 
-// Se déclenche une fois le document HTML initial entièrement chargé et analysé
+// L'événement DOMContentLoaded de déclenche une fois le document HTML initial entièrement chargé et analysé
+// AddEventListener() associe un gestionnaire d'événements à un élément
 window.addEventListener("DOMContentLoaded", (event) => {
 
     // Récupération des données par requête

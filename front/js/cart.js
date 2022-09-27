@@ -8,7 +8,8 @@ let cart = JSON.parse(window.localStorage.getItem("cart"));
 let globalTotalPrice = 0;
 let globalTotalQuantity = 0;
 
-// Se déclenche une fois le document HTML initial entièrement chargé et analysé
+// L'événement DOMContentLoaded de déclenche une fois le document HTML initial entièrement chargé et analysé
+// AddEventListener() associe un gestionnaire d'événements à un élément
 window.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("totalPrice").innerHTML = globalTotalPrice;
     document.getElementById("totalQuantity").innerHTML = globalTotalQuantity;
@@ -31,6 +32,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 function createItem(product, cartElement) {
 
     // Déclaration d'une variable pour y avoir les prix qui sont dans le panier
+    // ParseInt = nombre entier/1 valeur
     globalTotalPrice += parseInt(product.price) * parseInt(cartElement.quantity);
     globalTotalQuantity += parseInt(cartElement.quantity);
 
@@ -123,7 +125,7 @@ function createItem(product, cartElement) {
 
         // Condition pour que le n° d'article soit comprit entre 0 et 100
         if (event.target.value > 0 && event.target.value <= 100) {
-            // Mettre l'élément de côté pour le travailler
+            // Mettre l'élément que l'on veut modifer de côté pour le travailler
             let elementToUpdate = cart.filter(function (element) {
                 return element.id === idUpdate && element.color === colorUpdate;
             });

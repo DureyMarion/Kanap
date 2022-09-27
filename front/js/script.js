@@ -1,7 +1,8 @@
 // Adresse API de base
 const API_URL = "http://localhost:3000/api";
 
-// Se déclenche une fois le document HTML initial entièrement chargé et analysé
+// L'événement DOMContentLoaded de déclenche une fois le document HTML initial entièrement chargé et analysé
+// AddEventListener() associe un gestionnaire d'événements à un élément
 window.addEventListener("DOMContentLoaded", (event) => {
 
   // Récupération des données par requête
