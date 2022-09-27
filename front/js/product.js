@@ -91,9 +91,10 @@ document.querySelector("#addToCart").addEventListener("click", (event) => {
             quantity: newQuantity,
         }
 
-        // Actualise le localStorage pour la prise en compte des modifications
-        cartArray.push(newCartItem);
+        // Merge du tableau et de l'élément avce son id, sa couleur et sa quantité
+        cartArray.push(newCartItem); 
 
+        // Actualise le localStorage pour la prise en compte des modifications
         window.localStorage.setItem("cart", JSON.stringify(cartArray));
     }
 });
