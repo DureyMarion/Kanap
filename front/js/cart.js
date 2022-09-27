@@ -149,7 +149,7 @@ function createItem(product, cartElement) {
 
     // BTN de suppression
     productSupprimer.addEventListener("click", (event) => {
-        // Événement non annulable
+        // Élément coupé afin d'y mettre ce que je veux après
         event.preventDefault();
 
         // Sélection de l'élément à supprimer en fonction de son id et de sa couleur
