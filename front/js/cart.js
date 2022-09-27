@@ -4,6 +4,7 @@ const API_URL = "http://localhost:3000/api";
 // Ajouter au local storage
 let cart = JSON.parse(window.localStorage.getItem("cart"));
 
+// Mise à 0 pour le prix et la quantité dans le panier vierge
 let globalTotalPrice = 0;
 let globalTotalQuantity = 0;
 
@@ -242,6 +243,7 @@ form.addEventListener("submit", (event) => {
         (verificationCity() == true) &&
         (verificationAddress() == true)
     ) {
+        // Formate les données que l'on envoie à l'API
         let data = {
             products: cart.map((item) => item.id),
             contact: {
@@ -262,6 +264,8 @@ form.addEventListener("submit", (event) => {
             .then((response) => response.json())
             .then((promise) => {
                 let responseServeur = promise;
+                // Création de orderId (numéro de commande)
+                // Redirection page confirmation avec le paramètre "?" orderId
                 document.location.href = "confirmation.html?order-id=" + responseServeur.orderId;
             })
     }
