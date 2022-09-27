@@ -122,11 +122,12 @@ function createItem(product, cartElement) {
 
         // Condition pour que le n° d'article soit comprit entre 0 et 100
         if (event.target.value > 0 && event.target.value <= 100) {
+            // Mettre l'élément de côté pour le travailler
             let elementToUpdate = cart.filter(function (element) {
                 return element.id === idUpdate && element.color === colorUpdate;
             });
 
-            // Ajout des modifications dans le panier
+            // Edite la quantité de l'élément modifier
             elementToUpdate[0].quantity = parseInt(event.target.value);
 
             // Garder les éléments du panier de côté
@@ -134,9 +135,9 @@ function createItem(product, cartElement) {
                 return (element.id === idUpdate && element.color === colorUpdate) === false;
             });
 
-            // Actualise le localStorage pour la prise en compte des modifications
+            // Merge du tableau et de l'élément modifié avec la nouvelle quantité
             cart.push(elementToUpdate[0]);
-
+            // Actualise le localStorage pour la prise en compte des modifications  
             localStorage.setItem("cart", JSON.stringify(cart));
             location.reload();
         }
@@ -161,7 +162,7 @@ function createItem(product, cartElement) {
 }
 
 
-// Réalisation du Formulaire
+// Récupération du Formulaire
 const form = document.querySelector(".cart__order__form");
 
 form.addEventListener("submit", (event) => {
