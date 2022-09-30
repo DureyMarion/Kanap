@@ -22,7 +22,7 @@ function createItem(item) {
   // Création et insertion de l'élément "a"
   const sectionItems = document.querySelector("#items");
   const articleLink = document.createElement("a");
-  articleLink.href = "file:///Users/mariondurey/Documents/GitHub/Projet5/front/html/product.html?id=" + item._id;
+  articleLink.href = "product.html?id=" + item._id;
   sectionItems.appendChild(articleLink);
   articleLink.innerHTML = "";
 
