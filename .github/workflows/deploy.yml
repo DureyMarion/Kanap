@@ -1,0 +1,19 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # ou master si votre branche principale s'appelle master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: . # Déploie le contenu de la racine
+          branch: gh-pages # La branche qui hébergera le site
